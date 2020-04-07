@@ -4,9 +4,9 @@ function test(){
     const email = document.getElementById('email')
     const number = document.getElementById('number')
     function verif() {
-        if(name.value && firstName.value && /^.{7,30}\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) && /(?<=\d) (?=\d)/.test(number.value)){
+        if(name.value && firstName.value && /^[-+.\w]{7,30}@[-.\w]{1,20}\.[-.\w]{2,3}$/.test(email.value) && /(?<=\d) (?=\d)/.test(number.value)){
             return true
-        }if(/^.{7,30}\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) == false){
+        }if(/^[-+.\w]{7,30}@[-.\w]{1,20}\.[-.\w]{2,3}$/.test(email.value) == false){
             alert("Erreur dans l'email")
             return false
         }if(/(?<=\d) (?=\d)/.test(number.value) ==  false){
