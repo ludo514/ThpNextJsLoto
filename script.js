@@ -3,20 +3,8 @@ function test(){
     const firstName = document.getElementById('first_name')
     const email = document.getElementById('email')
     const number = document.getElementById('number')
-    function verif() {
-        if(name.value && firstName.value && /^[-+.\w]{7,30}@[-.\w]{1,20}\.[-.\w]{2,3}$/.test(email.value) && /(?<=\d) (?=\d)/.test(number.value)){
-            return true
-        }if(/^[-+.\w]{7,30}@[-.\w]{1,20}\.[-.\w]{2,3}$/.test(email.value) == false){
-            alert("Erreur dans l'email")
-            return false
-        }if(/(?<=\d) (?=\d)/.test(number.value) ==  false){
-            alert("Erreur dans le tirage")
-            return false
-        }else{
-            return false
-        }
-    }
-    if(verif()){
+
+    if(verif(name, firstName, email, number)){
         //alert('name ' + name.value + 'prenom ' + firstName.value + 'email ' + email.value + 'nombre ' + number.value)
         let loto = tirage()
         
@@ -41,6 +29,19 @@ function test(){
 
 }
 
+function verif(name1, firstName1, email1, number1) {
+    if(name1.value && firstName1.value && /^[-+.\w]{7,30}@[-.\w]{1,20}\.[-.\w]{2,3}$/.test(email1.value) && /(?<=\d) (?=\d)/.test(number1.value)){
+        return true
+    }if(/^[-+.\w]{7,30}@[-.\w]{1,20}\.[-.\w]{2,3}$/.test(email.value) == false){
+        alert("Erreur dans l'email")
+        return false
+    }if(/(?<=\d) (?=\d)/.test(number.value) ==  false){
+        alert("Erreur dans le tirage")
+        return false
+    }else{
+        return false
+    }
+}
 function tirage(){
     let tab = []
     for (let i = 0; i < 6; i++) {
